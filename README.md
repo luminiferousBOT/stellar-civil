@@ -20,6 +20,7 @@ The suite is built with a primary focus on Indian Standard (IS) codes, providing
 * **IS 456 (2000)**: Plain and Reinforced Concrete - Code of Practice.
 * **IS 800 (2007)**: General Construction in Steel - Code of Practice.
 * **IS 875 (Parts 1-5)**: Design Loads (Other than Earthquake) for Buildings and Structures.
+* Much more...
 
 ### 3. Real-time Modelling
 Leveraging a modern web-based engine, the platform provides instantaneous feedback on structural parameters. Adjusting geometric or material inputs triggers immediate recalculations, enabling efficient design iterations.
@@ -101,4 +102,4 @@ This project is licensed under the terms of the MIT License. See the [LICENSE](L
 ## Author
 
 Developed and maintained by **Devashish Kaushik**.
-For professional inquiries or technical support, please contact via [LinkedIn](https://www.linkedin.com/in/devashish-kaushik-31a862271/).
+For professional inquiries or technical support or bug fixes, please contact via [LinkedIn](https://www.linkedin.com/in/devashish-kaushik-31a862271/).
