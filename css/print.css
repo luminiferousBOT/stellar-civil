@@ -1,0 +1,147 @@
+/* ═══════════════════════════════════════════════════════════════
+   STELLAR CIVIL — Print Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+@media print {
+  /* Hide non-essential elements */
+  .sidebar,
+  .sidebar-overlay,
+  .topbar,
+  .sticky-bar,
+  .toast-container,
+  .modal-overlay,
+  .input-panel,
+  .action-bar,
+  .export-bar,
+  .btn,
+  .theme-toggle,
+  .nav-item,
+  .assumptions-box__chevron {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: black;
+    overflow: visible;
+    height: auto;
+  }
+
+  .app-shell {
+    display: block;
+    height: auto;
+  }
+
+  .main-content {
+    margin-left: 0 !important;
+    margin-top: 0 !important;
+    overflow: visible;
+    height: auto;
+  }
+
+  .main-content__inner {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Print header */
+  .print-header {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+    border-bottom: 2pt solid #0F172A;
+  }
+
+  .print-header__brand {
+    font-size: 14pt;
+    font-weight: 700;
+  }
+
+  .print-header__info {
+    text-align: right;
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Tables */
+  .step-table,
+  .design-table {
+    font-size: 9pt;
+  }
+
+  .step-table th,
+  .design-table th {
+    background: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .step-table th,
+  .step-table td,
+  .design-table th,
+  .design-table td {
+    border: 1px solid #ccc !important;
+    padding: 4pt 6pt;
+  }
+
+  /* Cards */
+  .summary-card {
+    border: 1px solid #ccc;
+    page-break-inside: avoid;
+  }
+
+  .summary-card::before {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Compliance */
+  .compliance-section {
+    page-break-before: always;
+    border: 1px solid #ccc;
+  }
+
+  /* Assumptions */
+  .assumptions-box {
+    background: #fffbeb !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    page-break-inside: avoid;
+  }
+
+  .assumptions-box.collapsed .assumptions-box__content {
+    max-height: none;
+    padding: 0 20pt 12pt;
+  }
+
+  /* Footer */
+  .print-footer {
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 8pt;
+    color: #999;
+    padding-top: 8pt;
+    border-top: 1px solid #ccc;
+  }
+
+  /* Page breaks */
+  .step-table-container {
+    page-break-inside: auto;
+  }
+
+  .step-table tr {
+    page-break-inside: avoid;
+  }
+}
+
+/* Hidden print elements (visible only in print) */
+.print-header,
+.print-footer {
+  display: none;
+}

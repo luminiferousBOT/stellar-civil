@@ -1,0 +1,609 @@
+You are a senior full-stack developer and structural engineering domain expert. Your task is to build a COMPLETE, PRODUCTION-READY FULL-FLEDGED (It’s going to take long since we are going to put in time and effort to this and complete it in phases. I don’t expect it to complete it so easily and fast) web application for Indian Civil Engineers — a structural design calculator suite based on Indian Standards (IS Codes). 
+
+Build this as a professional grade web app with all the latest tech stacks, programming languages, backends robust, everything professional,  that you can come up with. 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 1 — APP IDENTITY & BRANDING
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+App Name: "Stellar Civil"
+Tagline: "IS Code Design Calculators for Structural Engineers"
+Target Users: Indian structural/civil engineers — practicing professionals,
+consultants, and final-year students.
+Tone: Professional, clean, utilitarian — like a premium engineering tool,
+UI/UX: Closely Inspect this site: https://opencivil-project.github.io/
+I want the UI and UX of this project to be exactly like this eg I gave you, same fonts, same design and same styling, except there will be both light and dark mode
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 2 — NAVIGATION STRUCTURE
+
+GROUP 1 — RCC Design (IS 456:2000)
+1.1  Rectangular Slab Design (Two-way and One-way)
+1.2  Singly Reinforced Beam Design
+1.3  Doubly Reinforced Beam Design
+1.4  T-Beam / L-Beam Design
+1.5  Short Column Design (Axial + Uniaxial Bending)
+1.6  Isolated Footing Design
+1.7  Staircase Design (Dog-legged)
+1.8  Cantilever Retaining Wall Design
+
+GROUP 2 — Limit State Design Checks (IS 456:2000)
+2.1  Shear Check & Stirrup Design
+2.2  Development Length Calculator
+2.3  Deflection Check (L/d ratio)
+2.4  Crack Width Check
+
+GROUP 3 — Steel Design (IS 800:2007)
+3.1  Tension Member Design
+3.2  Compression Member (Column) Design
+3.3  Beam Design (Laterally Supported)
+3.4  Fillet Weld Design
+3.5  Bolted Connection Design (Bearing + Friction type)
+
+GROUP 4 — Load Calculations (IS 875)
+4.1  Dead Load Calculator (IS 875 Part 1)
+4.2  Live Load Reference Table (IS 875 Part 2)
+4.3  Wind Load Calculator (IS 875 Part 3)
+4.4  Seismic Load Calculator (IS 1893:2016)
+
+GROUP 5 — Utilities & Reference
+6.1  Unit Converter (SI ↔ other)
+6.2  Material Properties Table (IS 456 / IS 800)
+6.3  Reinforcement Bar Data (IS 1786)
+6.4  IS Code Reference Cheatsheet
+6.5  Bar Bending Schedule Generator full fledged.
+
+You are free to implement this in however way you want, be it multi pages or what…. Idk you find that is best suitable for easy navigation and best UX. Just be in line with the design being similar to the example website that I gave you above. 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 3 — ENGINEERING CALCULATION REQUIREMENTS
+For EVERY calculator module, implement the following, and if I happen to miss some parameters, do not forget to add it :
+
+─── 3A. INPUT PANEL ───
+
+Each input must have:
+- Clear label with full name (e.g., "Effective Span (Lx)")
+- Unit shown inline (e.g., "m", "kN/m²", "mm")
+- Default value pre-filled (sensible typical value)
+- Min/max validation with red error message if violated
+- Tooltip (?) icon showing what the parameter means
+- Where applicable: dropdown instead of free input (e.g., fck grades: M15/M20/M25/M30/M35/M40;
+fy grades: Fe250/Fe415/Fe500/Fe550/Fe600)
+
+─── 3B. CALCULATION ENGINE ───
+
+All calculations must be rigorously checked for validity. We are not going to mess up the calculation part. Implement them with extreme precision.
+
+
+You can show results in layers, for eg:
+
+LAYER 1 — Summary Card (top)
+- Final design decisions in large, bold text
+- e.g., "Overall Depth D = 175 mm", "Ast required = 628 mm²/m", "Provide 10φ @ 125 mm c/c"
+- Color coded: Green = OK / passes check, Red = FAIL / revise input
+
+LAYER 2 — Step-by-Step Calculation Table
+A scrollable table with columns:
+| Step No. | Description | Formula / IS Clause | Calculated Value | Unit |
+Every single calculation step shown. Nothing skipped.
+IS Clause numbers shown .
+Formulas shown in mathematical notation (use Unicode superscripts/fractions).
+
+LAYER 3 — Design Summary Table
+Final reinforcement / section details in a clean table.
+For RCC: show required Ast, provided Ast, bar dia, spacing, check (OK/FAIL).
+For steel: show section chosen, capacity, utilization ratio.
+
+─── 3D. CODE COMPLIANCE FLAGS ───
+
+After every calculation, show a compliance checklist:
+✅ Minimum steel check (Cl. X.X.X) — PASS
+✅ Maximum steel check — PASS
+⚠️ Deflection check — BORDERLINE (L/d = 26, limit = 26) — Verify
+❌ Development length — FAIL — Increase anchorage
+
+─── 4E. ASSUMPTIONS BOX ───
+
+Below inputs, always show a collapsible "Assumptions & Limitations" yellow box
+listing what the calculator assumes (e.g., "Assumes simply supported condition",
+"Live load on slab per IS 875 Part 2 not included here").
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 4 — MODULE-SPECIFIC CALCULATION LOGIC
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Implement the following with full IS Code compliance:
+
+━━ MODULE 1.1 — TWO-WAY / ONE-WAY SLAB (IS 456:2000, Annex D) ━━
+
+Inputs:
+- Lx (shorter span, m), Ly (longer span, m)
+- fck (dropdown: M20/M25/M30/M35), fy (dropdown: Fe415/Fe500/Fe550)
+- Exposure condition (Mild/Moderate/Severe/Very Severe/Extreme)
+- Live load (kN/m²), Floor finish load (kN/m²), Partition load (kN/m²)
+- Panel type (9 types as per IS 456 Annex D Table 26)
+- Support condition auto-determines if one-way (Ly/Lx > 2) or two-way
+
+Logic:
+Step 1: Determine slab type (Ly/Lx > 2 → one-way)
+Step 2: Assume D, compute d = D - cover - φ/2
+Step 3: Self-weight of slab = 25 × D kN/m²
+Step 4: Total factored load wu = 1.5 × (DL + LL)
+Step 5: For two-way: Read αx, αy moment coefficients from IS 456 Table 26
+based on panel type and Ly/Lx ratio. Interpolate between values.
+Step 6: Mx = αx × wu × Lx², My = αy × wu × Lx²
+Step 7: Check depth: dreq = √(M / (0.138 × fck × b))
+Step 8: Ast_x = M_x / (0.87 × fy × d × (1 - (Ast×fy)/(b×d×fck)))
+Solve quadratic for exact Ast
+Step 9: Spacing = (area of 1 bar × 1000) / Ast
+Step 10: Check min steel = 0.12% bD (Fe415) per Cl. 26.5.2.1
+Step 11: Check max spacing ≤ 3d or 300mm per Cl. 26.3.3
+Step 12: Check L/d ratio per IS 456 Cl. 23.2.1
+Step 13: Shear check at d from support
+Step 14: Development length check per Cl. 26.2.1
+
+Output:
+- D provided, d effective
+- Ast_x required, provided (bar dia + spacing)
+- Ast_y required, provided
+- Distribution steel (0.12% for HYSD)
+- All 14 step table entries
+
+━━ MODULE 1.2 — SINGLY REINFORCED BEAM (IS 456:2000) ━━
+
+Inputs: Width b (mm), Effective depth d (mm), fck, fy,
+Factored moment Mu (kN·m), Factored shear Vu (kN)
+
+Logic:
+Step 1: Limiting moment of resistance
+Mu_lim = 0.138 × fck × b × d² (Fe415)
+= 0.133 × fck × b × d² (Fe500)
+Step 2: Check if Mu ≤ Mu_lim (else needs doubly reinforced)
+Step 3: Solve quadratic for Ast:
+Mu = 0.87×fy×Ast×d × (1 - Ast×fy/(b×d×fck))
+Step 4: Min steel = 0.85×b×d/fy (Cl. 26.5.1.1)
+Step 5: Max steel = 0.04×b×D
+Step 6: Choose bar configuration (e.g., 3-16φ = 603 mm²)
+Step 7: Shear design — compute τv = Vu/(b×d)
+Find τc from IS 456 Table 19 based on pt and fck
+If τv > τc: design stirrups
+Vus = Vu - τc×b×d
+Spacing = (0.87×fy×Asv×d) / Vus
+Min stirrup spacing check per Cl. 26.5.1.6
+Step 8: Side face reinforcement if D > 750mm (Cl. 26.5.1.3)
+Step 9: Check deflection (Cl. 23.2.1) with modification factors
+
+━━ MODULE 1.3 — DOUBLY REINFORCED BEAM ━━
+
+Inputs: b, D, d, d' (cover to compression steel), fck, fy, Mu
+
+Logic:
+Step 1: Compute Mu_lim
+Step 2: If Mu > Mu_lim: Mu2 = Mu - Mu_lim
+Step 3: fsc = stress in compression steel (700×(xu_max-d')/xu_max,
+limited to 0.87fy for Fe415, per IS 456 stress-strain)
+Step 4: Asc = Mu2 / (fsc × (d - d'))
+Step 5: Ast2 = Asc × fsc / (0.87 × fy)
+Step 6: Ast_total = Ast1 + Ast2 (where Ast1 = balanced section steel)
+Step 7: All IS checks as in singly reinforced beam
+
+━━ MODULE 1.4 — T-BEAM DESIGN ━━
+
+Inputs: bw (web width), Df (flange thickness), span L, spacing of beams,
+d, fck, fy, Mu
+
+Logic:
+Step 1: Effective flange width bf per IS 456 Cl. 23.1.2:
+bf = Lo/6 + bw + 6Df (T-beam)
+bf = Lo/12 + bw + 3Df (L-beam)
+bf ≤ actual available width
+Step 2: Check if NA lies in flange (Mu ≤ Mu_flange):
+Mu_flange = 0.87×fy×Ast×(d - 0.42×Df)
+if Df/d ≤ 0.2: treat as rectangular beam of width bf
+Step 3: If NA in web: compute using T-section moment formula
+Step 4: Solve for Ast
+
+━━ MODULE 1.5 — SHORT COLUMN DESIGN ━━
+
+Inputs: b, D (cross-section), effective length lex, ley,
+Pu (factored axial load, kN), Mux, Muy (factored moments, kN·m),
+fck, fy, cover
+
+Logic:
+Step 1: Slenderness check: lex/D ≤ 12 (short column condition)
+If > 12: flag as slender, still compute with note
+Step 2: For axial only: Pu_capacity = 0.4×fck×Ac + 0.67×fy×Asc
+Rearrange for Asc required
+Step 3: Min steel = 0.8% Ag, Max = 6% Ag (Cl. 26.5.3.1)
+Step 4: For combined bending: use interaction diagram approach
+Compute P0, Mb0, compute ratios Pu/Puz, Mux/Mux1, Muy/Muy1
+Check (Mux/Mux1)^αn + (Muy/Muy1)^αn ≤ 1.0 (IS 456 Cl. 39.6)
+where αn = 1.0 to 2.0 based on Pu/Puz
+Step 5: Lateral ties: dia ≥ φmain/4 or 6mm whichever greater
+Spacing ≤ least of: least lateral dim, 16×φmain, 300mm
+
+━━ MODULE 1.6 — ISOLATED FOOTING DESIGN ━━
+
+Inputs: Column size (bx × by), Column load P (kN), Column moment M (kN·m),
+Safe Bearing Capacity q (kN/m²), fck, fy, unit weight of soil γ (kN/m³),
+depth of foundation Df (m)
+
+Logic:
+Step 1: Net SBC = q - γ×Df - 0.5×25 (self weight of footing assumed)
+Step 2: Area required = P / net SBC, size footing (square or rectangular)
+Step 3: Check eccentricity: e = M/P, e ≤ L/6
+Step 4: Net upward pressure qu = Pu / (L×B) (factored)
+Step 5: Critical section for BM at face of column:
+Mu = qu × B × ((L-bx)/2)² / 2
+Step 6: Depth from BM, also check for one-way shear and
+two-way (punching) shear — both critical
+Step 7: Two-way shear: critical perimeter at d/2 from column face
+τv = Vu / (bo × d), compare with ks×τc (IS 456 Cl. 31.6.3.1)
+Step 8: Ast design, check transfer of load at column base (Cl. 34.4)
+Step 9: Dowel bars / development length check
+
+━━ MODULE 1.7 — DOG-LEGGED STAIRCASE ━━
+
+Inputs: Floor height H (m), Going G (mm), Riser R (mm),
+Width of stair (m), fck, fy, LL on stair (kN/m²)
+
+Logic:
+Step 1: Number of risers = H/R, check 150 ≤ R ≤ 200mm
+Step 2: Number of goings = risers - 1, G ≥ 250mm
+Step 3: Check: 2R + G = 550 to 700mm
+Step 4: Span of waist slab (inclined), horizontal span
+Step 5: Loads on inclined slab:
+Self weight = 25 × t × (√(R²+G²)/G)
+Finish = 1.0 kN/m² on plan area
+LL per IS 875 Part 2
+Step 6: Total factored wu, compute Mu
+Step 7: Design waist slab (same as one-way slab)
+Step 8: Landing slab design (treated separately)
+
+━━ MODULE 1.8 — CANTILEVER RETAINING WALL (IS 456:2000 / IS 3370) ━━
+
+Inputs: Height of retained earth H (m), SBC q (kN/m²),
+Unit weight of soil γ (kN/m³), Angle of internal friction φ (°),
+Surcharge q_s (kN/m²), fck, fy
+
+Logic:
+Step 1: Rankine's Ka = (1-sinφ)/(1+sinφ)
+Step 2: Pressure distribution on stem
+Step 3: Design stem (as vertical cantilever): M at base of stem
+Step 4: Proportion base slab: L ≈ 0.4 to 0.6H typically
+Step 5: Check overturning: FOS ≥ 1.5 (taking moments about toe)
+Step 6: Check sliding: FOS ≥ 1.5, μ=0.5 typically
+Step 7: Check bearing pressure ≤ SBC at toe and heel
+Step 8: Design heel slab, toe slab as cantilever beams
+Step 9: Shear key design if needed
+
+━━ MODULE 2.1 — SHEAR & STIRRUP DESIGN ━━
+
+Inputs: b, d, Vu, fck, fy_stirrup, Ast provided, bar configuration
+
+Logic per IS 456 Cl. 40:
+Step 1: τv = Vu / (b×d)
+Step 2: Find pt = 100×Ast/(b×d)
+Step 3: τc from IS 456 Table 19 (implement full table as lookup with interpolation)
+Step 4: τc_max from IS 456 Table 20
+Step 5: If τv ≤ τc: only minimum stirrups per Cl. 26.5.1.6
+Step 6: If τc < τv ≤ τc_max: Vus = (τv - τc)×b×d
+For 2-legged 8φ stirrups: Sv = 0.87×fy×Asv×d / Vus
+Round down to nearest 25mm
+Step 7: Min Sv = 0.75d or 300mm
+Step 8: If τv > τc_max: redesign section (show error)
+
+━━ MODULE 2.2 — DEVELOPMENT LENGTH ━━
+
+Inputs: Bar dia φ, fck, fy, type (tension/compression),
+Surface condition (plain/deformed)
+
+Formula:
+Ld = φ × σs / (4 × τbd)
+where τbd from IS 456 Table 5 (implement full table)
+For tension deformed bars: τbd × 1.6 (Cl. 26.2.1.1)
+For compression: Ld (compression) = 0.8 × Ld (tension)
+
+Also compute for standard hook reduction (Cl. 26.2.2.1)
+
+━━ MODULE 2.3 — DEFLECTION CHECK ━━
+
+Inputs: Span L, d provided, fs (steel stress at service),
+pt_required, pt_provided, modification factors
+
+Logic per IS 456 Cl. 23.2.1:
+Basic L/d ratio: 7 (cantilever), 20 (simply supported), 26 (continuous)
+Modification factor kt for tension reinforcement (IS 456 Fig. 4)
+Modification factor kc for compression reinforcement (IS 456 Fig. 5)
+Modification factor kf for flanged beams (IS 456 Fig. 6)
+Allowable L/d = basic × kt × kc × kf
+Check actual L/d ≤ allowable
+
+━━ MODULE 3.1–3.5 — STEEL DESIGN (IS 800:2007 — Limit State) ━━
+
+3.1 Tension Member:
+- Tdg = Ag × fy / γm0 (gross section yielding, Cl. 6.2)
+- Tdn = 0.9 × An × fu / γm1 (net section rupture, Cl. 6.3.1)
+- Tdb (block shear, Cl. 6.4)
+- T_design = minimum of above
+- Select section from built-in ISA/ISA angle table
+
+3.2 Compression Member:
+- Effective length per IS 800 Table 11
+- Slenderness λ = KL/r
+- Imperfection factor α from IS 800 Table 7 (buckling curves a/b/c/d)
+- Euler stress, non-dimensional slenderness λ̄
+- Fcd = fy / (γm0 × (φ + (φ²-λ̄²)^0.5)) (IS 800 Cl. 7.1.2.1)
+- Select from ISMB/ISHB section table
+
+3.3 Beam Design:
+- Classify section (plastic/compact/semi-compact/slender per IS 800 Table 2)
+- Md = βb × Zp × fbd (IS 800 Cl. 8.2.1.2)
+- Lateral torsional buckling check (Cl. 8.2.2)
+- Shear capacity Vd (Cl. 8.4)
+- Web buckling and crippling (Cl. 8.7)
+
+3.4 Fillet Weld:
+- Design strength per unit length = f_w = fu/(√3 × γmw)
+- Effective length, throat size tt = 0.7s
+- Force per unit length check
+
+3.5 Bolt Design:
+- For 4.6/8.8/10.9 grade bolts
+- Bearing capacity: Vdpb = 2.5×kb×d×t×fu/γmb (Cl. 10.3.2.1)
+- Shear capacity: Vnsb = fu×Anb / (√3) (Cl. 10.3.1)
+- Friction type (HSFG): Vnsf = μf×Kh×Fo×Nb (Cl. 10.4.3)
+- Number of bolts required, arrangement
+
+━━ MODULE 4.3 — WIND LOAD (IS 875 Part 3:2015) ━━
+
+Inputs: Location/zone (map selector), Terrain category (1/2/3/4),
+Building height H, Width W, Length L,
+Building class (A/B/C), Topography factor k3
+
+Logic:
+Step 1: Vb from IS 875 Part 3 Fig. 1 wind zones (implement zone map as dropdown
+with all state capitals and major cities pre-mapped to zones)
+Step 2: k1 = risk coefficient (IS 875 Table 1) based on building class
+Step 3: k2 = terrain factor (IS 875 Table 2) — implement full table, interpolate
+Step 4: k3 = topography factor (user input, default 1.0)
+Step 5: Design wind speed Vz = Vb × k1 × k2 × k3
+Step 6: Design wind pressure pz = 0.6 × Vz²
+Step 7: Cp (external pressure coefficients) for walls and roof
+from IS 875 Tables — implement for rectangular buildings
+Step 8: Wind load F = (Cpe - Cpi) × A × pz
+
+━━ MODULE 4.4 — SEISMIC LOAD (IS 1893:2016 Part 1) ━━
+
+Inputs: Zone (II/III/IV/V), Importance factor I (1.0/1.2/1.5),
+Response reduction R (3/4/5), Soil type (I/II/III),
+Building height H, Base dimension d (in direction of shaking),
+Seismic weight W (kN)
+
+Logic:
+Step 1: Zone factor Z from IS 1893 Table 3 (II=0.10, III=0.16, IV=0.24, V=0.36)
+Step 2: Time period T:
+For RC frame: T = 0.075 × H^0.75
+For steel: T = 0.085 × H^0.75
+For shear wall/other: T = 0.09×H/√d
+Step 3: Sa/g from IS 1893 Fig. 2 based on soil type and T
+(Implement the three curves as mathematical expressions)
+Step 4: Ah = (Z/2) × (I/R) × (Sa/g)
+Step 5: VB = Ah × W
+Step 6: Distribute VB vertically per IS 1893 Cl. 7.7.1:
+Qi = VB × Wi×hi² / Σ(Wj×hj²)
+Show floor-by-floor distribution table (up to 20 floors)
+
+━━ MODULE  — BAR BENDING SCHEDULE GENERATOR ━━
+
+Inputs: Select element type (slab/beam/column/footing)
+Fill in bar marks, shape codes (IS 2502), diameter,
+number of bars, cutting length
+
+Built-in shape code library (IS 2502):
+Shape 1: Straight bar → L = cutting length
+Shape 2: L-shaped → L = A + B - 1φ
+Shape 3: U-bar → L = A + 2B + 2C - 3φ
+Shape 4: Stirrup (rectangular) → L = 2(A+B) + 24φ (2 hooks)
+Shape 5: Crank (inclined at 45°) → L = A + 0.42D + B - d (crank allowance)
+Shape 6: Circular → L = π×(D-φ) + hook length
+
+Output: Full BBS table with columns:
+Bar Mark | Dia (mm) | Shape Code | A | B | C | D (dims) |
+No. of bars per set | No. of sets | Total no. | Cutting Length (mm) |
+Total Length (m) | Unit Weight (kg/m) | Total Weight (kg)
+
+Also include a weight summary by diameter at the bottom.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION — BUILT-IN DATA TABLES (Hardcode all of these)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Implement as JavaScript objects/arrays — all IS Code tables must be exact:
+
+1. IS 456 Table 19 — Permissible shear stress τc for different pt and fck values
+(pt from 0.15 to 3.0, fck: M15/M20/M25/M30/M35/M40)
+Implement bilinear interpolation between table values.
+
+2. IS 456 Table 20 — Maximum shear stress τc_max
+
+3. IS 456 Annex D Table 26 — Bending moment coefficients αx, αy
+for nine panel types and Ly/Lx ratios (1.0 to 2.0 in steps of 0.1)
+
+4. IS 456 Table 5 — Design bond stress τbd for different fck grades
+(M20=1.2, M25=1.4, M30=1.5, M35=1.7, M40=1.9 — N/mm²)
+
+5. IS 875 Part 3 Table 2 — k2 terrain/height multiplier (full table)
+Heights: 10, 15, 20, 30, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500m
+Terrain categories: 1, 2, 3, 4
+
+6. IS 1893:2016 — Sa/g curves for soil types I, II, III
+(Implement as piecewise linear functions)
+
+7. Reinforcement Bar Data (IS 1786):
+Dia (mm): 6, 8, 10, 12, 16, 20, 25, 32, 40
+Area (mm²): 28.3, 50.3, 78.5, 113.1, 201.1, 314.2, 490.9, 804.2, 1256.6
+Weight (kg/m): 0.222, 0.395, 0.617, 0.888, 1.578, 2.466, 3.854, 6.313, 9.865
+
+8. ISMB Section Table (for steel design):
+Include: ISMB 100 through ISMB 600
+Columns: Section, Mass(kg/m), A(cm²), D(mm), bf(mm), tf(mm), tw(mm),
+Ixx(cm⁴), Iyy(cm⁴), rxx(cm), ryy(cm), Zxx(cm³), Zpxx(cm³)
+
+9. ISA Equal Angle Section Table:
+Include ISA 45×45 through ISA 200×200 (standard sizes)
+Columns: Designation, t(mm), A(cm²), rxx(cm), ryy(cm), ruu(cm), rvv(cm)
+
+10. Indian City → Wind Zone mapping (IS 875 Part 3):
+At minimum include all state capitals + top 50 cities by population.
+Stored as searchable dropdown.
+
+11. Material Properties:
+Concrete: unit weight (25 kN/m³), E = 5000√fck (N/mm²), Poisson's = 0.2
+Steel (rebar): E = 2×10⁵ N/mm², unit weight = 78.5 kN/m³
+Structural steel: E = 2×10⁵ N/mm², G = 0.769×10⁵, Poisson's = 0.3
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 7 — EXPORT FEATURE (Critical Requirement)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Every calculator must have an Export button in the results panel.
+Implement TWO export options:
+
+OPTION A — Export to PDF
+Use the browser's window.print() API with a dedicated print stylesheet:
+- @media print: hide sidebar, hide input panel, show only results
+- Print header: App logo + Calculator name + Date + Time
+- Print footer: "Generated by Stellar Civil | For reference only.
+Verify with qualified engineer."
+- All tables print with borders
+- Step-by-step table must break cleanly across pages
+- Force page break before compliance checklist
+
+OPTION B — Export to CSV (for BBS and summary tables)
+- Generate CSV string from result tables
+- Trigger download using Blob + URL.createObjectURL
+- Filename: "StellarCivil_[ModuleName]_[Date].csv"
+
+Both export buttons must be disabled until calculations are run.
+Show "⬇ Export PDF" and "⬇ Export CSV" buttons side by side.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION  — UX & INTERACTION REQUIREMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. INPUT VALIDATION (real-time, on every input change):
+- Show red border + error message below if value out of range
+- Show green checkmark when valid
+- Disable "Calculate" button if any input is invalid
+- Show count of invalid fields in button: "Fix 2 errors"
+
+2. CALCULATE BUTTON BEHAVIOR:
+- Show loading spinner for 300ms (simulated) before showing results
+- Scroll smoothly to results after calculation
+- Button text changes to "Recalculate" after first run
+
+3. CLEAR/RESET:
+- "Clear All" restores all inputs to default values
+- Clears results panel
+- Asks for confirmation via a small inline confirmation (not JS alert)
+
+4. STICKY SUMMARY:
+- After calculation, a small sticky bar at the bottom of viewport shows
+the 3 most critical results (e.g., D=175mm, Ast=628mm²/m, Status: ✅ OK)
+- This persists as user scrolls through steps
+
+5. INPUT MEMORY (localStorage):
+- Save last used inputs for each module in browser localStorage
+- On revisiting a module, pre-fill with last used values
+- Show "Restored last session" toast notification
+
+6. KEYBOARD SHORTCUTS:
+- Enter key in any input → triggers calculation
+- Ctrl+P → triggers PDF export
+- Esc → collapses results panel
+- Ctrl+R → reset inputs
+
+7. TOOLTIPS:
+- Every input field has a ? tooltip icon
+- Hover shows: parameter name, IS Code clause reference, typical value range
+- Tooltips implemented in pure CSS (no JS required)
+
+8. RESPONSIVE BEHAVIOR:
+- Desktop (>1200px): sidebar + two-column input/output
+- Tablet (768–1200px): sidebar collapses, single column
+- Mobile (<768px): hamburger menu, full-screen calculator, bottom export bar
+
+9. ERROR HANDLING:
+- If calculation produces NaN or Infinity: show "Calculation error —
+check inputs" in a red card. Do not show partial results.
+- If section fails (e.g., depth insufficient): show clearly with redesign suggestion
+
+10. DARK MODE:
+- Toggle in top-right corner (moon/sun icon)
+- Preference saved to localStorage
+- Smooth CSS transition (transition: background 0.3s, color 0.3s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SECTION 9 — REFERENCE MODULES (Non-Calculator)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MODULE 6.2 — Material Properties Table
+A searchable, sortable HTML table showing concrete and steel properties.
+Columns for concrete: Grade, fck, fck_cube, Ec, εcu, τbd, etc.
+Columns for steel: Grade, fy, fu, Es, elongation
+
+MODULE 6.3 — Rebar Reference
+Table: dia, area, perimeter, weight/m, areas for 1–10 bars,
+common spacings (75/100/125/150/175/200/225/250mm) → area per meter
+
+MODULE 6.4 — IS Code Cheatsheet
+Quick-reference card for the most commonly used clauses:
+- Cover requirements (IS 456 Table 16)
+- Min/max steel ratios
+- Partial safety factors (γf for loads, γm for materials)
+- Load combinations (IS 456 / IS 1893)
+- Standard hooks and bends
+- Development length quick table by dia and grade
+
+MODULE 6.1 — Unit Converter
+Bidirectional converters for:
+- Force: N ↔ kN ↔ tf ↔ kip ↔ lbf
+- Stress: N/mm² ↔ kN/m² ↔ MPa ↔ ksi ↔ psi
+- Length: mm ↔ cm ↔ m ↔ ft ↔ inch
+- Moment: kN·m ↔ tf·m ↔ kip·ft ↔ lbf·in
+- Area: mm² ↔ cm² ↔ m² ↔ in²
+- Moment of Inertia: mm⁴ ↔ cm⁴ ↔ in⁴
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+. PRECISION:
+- Intermediate: work in base units (N, mm) throughout, convert only for display
+- Display: round to engineering convention (D to nearest 5mm, Ast to 1 mm²,
+spacing to nearest 25mm, loads to 2 decimal places)
+
+5. VALIDATION LIBRARY:
+Build a centralized validate(value, min, max, name) function that:
+- Returns {valid: bool, message: string}
+- Used consistently for all inputs across all modules
+
+SECTION — DISCLAIMER & LEGAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. On first load: show a modal disclaimer that must be acknowledged:
+"Stellar Civil India is a design aid tool intended for use by qualified
+civil/structural engineers. Results must be verified independently by
+a licensed engineer before use in any actual construction project.
+The developers accept no liability for errors or omissions. Always refer
+to the latest edition of the relevant IS Codes."
+Button: "I Understand — Proceed"
+Preference saved to localStorage (don't show again after first acknowledgement)
+
+2. Footer:
+"Stellar Civil India | Based on IS 456:2000, IS 800:2007, IS 875:2015,
+IS 1893:2016 | For educational and reference use only"
+
+3. Every exported PDF must include the disclaimer in the footer.
+
+Do NOT skip any module. Do NOT abbreviate calculation steps.
+Every formula must be implemented, not approximated, with a very high degree of precision.
+
