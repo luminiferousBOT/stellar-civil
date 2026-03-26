@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stellar Civil Workspace — IS Code Design Calculators for Structural Engineers</title>
+  <meta name="description" content="Professional structural design calculator suite based on Indian Standards (IS Codes) for civil and structural engineers. IS 456, IS 800, IS 875, IS 1893." />
+  <meta name="keywords" content="IS 456, IS 800, structural design, civil engineering, slab design, beam design, column design, RCC, steel design, Indian standards" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <script type="module" crossorigin src="/assets/workspace-BZTampS_.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/workspace-B1QRPPGB.css">
+  <link rel="stylesheet" crossorigin href="/assets/variables-ClI0bK2y.css">
+</head>
+<body>
+
+  <!-- ═══════ DISCLAIMER MODAL ═══════ -->
+  <div class="modal-overlay" id="disclaimer-modal">
+    <div class="modal">
+      <div class="modal__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+      </div>
+      <h2>Professional Use Disclaimer</h2>
+      <p>
+        Stellar Civil India is a design aid tool intended for use by qualified
+        civil/structural engineers. Results must be verified independently by
+        a licensed engineer before use in any actual construction project.
+        The developers accept no liability for errors or omissions. Always refer
+        to the latest edition of the relevant IS Codes.
+      </p>
+      <button class="btn btn-primary btn-lg" id="disclaimer-accept" style="width:100%;">
+        I Understand — Proceed
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════ APP SHELL ═══════ -->
+  <div class="app-shell">
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay"></div>
+
+    <!-- ── Sidebar ── -->
+    <aside class="sidebar">
+      <button class="sidebar__close" aria-label="Close sidebar">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="sidebar__header">
+        <a href="/" class="sidebar__brand">
+          <div class="sidebar__logo">SC</div>
+          <div>
+            <div class="sidebar__title">Stellar Civil Workspace</div>
+            <div class="sidebar__subtitle">IS Code Calculators</div>
+          </div>
+        </a>
+      </div>
+
+      <nav class="sidebar__nav" id="sidebar-nav">
+        <!-- Rendered by JS -->
+      </nav>
+    </aside>
+
+    <!-- ── Topbar ── -->
+    <header class="topbar">
+      <div class="topbar__left">
+        <button class="topbar__hamburger" id="hamburger-btn" aria-label="Open menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <div class="topbar__breadcrumb" id="breadcrumb">
+          <strong>Workspace</strong>
+        </div>
+      </div>
+      <div class="topbar__right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ── Main Content ── -->
+    <main class="main-content" id="main-content">
+      <!-- Rendered by JS router -->
+    </main>
+
+  </div>
+
+  <!-- ═══════ Scripts ═══════ -->
+  <!-- Calculator modules (auto-register) -->
+
+</body>
+</html>
