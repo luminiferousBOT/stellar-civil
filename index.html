@@ -11,7 +11,7 @@
   <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/variables.css" />
   <link rel="stylesheet" href="/css/landing.css" />
@@ -91,20 +91,168 @@
     <div class="hero-graphic">
       <div class="hero-css-window">
         <div class="window-header">
-          <div class="window-dot red"></div>
-          <div class="window-dot yellow"></div>
-          <div class="window-dot green"></div>
+          <div class="window-dots">
+            <div class="window-dot red"></div>
+            <div class="window-dot yellow"></div>
+            <div class="window-dot green"></div>
+          </div>
+          <div class="window-tab active">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            Beam Design — IS 456
+          </div>
+          <div class="window-tab">Slab Design</div>
         </div>
         <div class="window-body">
+          <!-- Mini Sidebar -->
           <div class="window-sidebar">
-            <div class="sidebar-line"></div>
-            <div class="sidebar-line short"></div>
-            <div class="sidebar-line"></div>
-            <div class="sidebar-line short"></div>
+            <div class="ws-logo">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="url(#logoGradientMockup)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="logoGradientMockup" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient></defs><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line><circle cx="12" cy="12" r="1.5" fill="#3b82f6" stroke="none"/></svg>
+              <span>SC</span>
+            </div>
+            <div class="ws-nav-group">
+              <div class="ws-nav-label">RCC Design</div>
+              <div class="ws-nav-item active">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+                Beam Design
+              </div>
+              <div class="ws-nav-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                Slab Design
+              </div>
+              <div class="ws-nav-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/></svg>
+                Column Design
+              </div>
+              <div class="ws-nav-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 21V8l9-6 9 6v13"/></svg>
+                Footing
+              </div>
+            </div>
+            <div class="ws-nav-group">
+              <div class="ws-nav-label">Steel Design</div>
+              <div class="ws-nav-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h20M2 18h20M6 6v12M18 6v12"/></svg>
+                Steel Beam
+              </div>
+              <div class="ws-nav-item">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg>
+                Bolt Design
+              </div>
+            </div>
           </div>
+
+          <!-- Main Content Area -->
           <div class="window-content">
-            <div class="content-box"></div>
-            <div class="content-box"></div>
+            <!-- Breadcrumb -->
+            <div class="wc-breadcrumb">
+              <span>RCC Design</span>
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+              <span class="wc-breadcrumb-active">Singly Reinforced Beam</span>
+            </div>
+
+            <!-- Two-Column Layout -->
+            <div class="wc-grid">
+              <!-- Input Panel -->
+              <div class="wc-panel wc-inputs">
+                <div class="wc-panel-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                  Design Parameters
+                </div>
+                <div class="wc-input-row">
+                  <label>Concrete Grade</label>
+                  <div class="wc-select">M25</div>
+                </div>
+                <div class="wc-input-row">
+                  <label>Steel Grade</label>
+                  <div class="wc-select">Fe500</div>
+                </div>
+                <div class="wc-input-row">
+                  <label>Beam Width (b)</label>
+                  <div class="wc-input-val"><span class="wc-num" data-target="300">0</span> mm</div>
+                </div>
+                <div class="wc-input-row">
+                  <label>Overall Depth (D)</label>
+                  <div class="wc-input-val"><span class="wc-num" data-target="550">0</span> mm</div>
+                </div>
+                <div class="wc-input-row">
+                  <label>Effective Span</label>
+                  <div class="wc-input-val"><span class="wc-num" data-target="6000">0</span> mm</div>
+                </div>
+                <div class="wc-input-row">
+                  <label>Factored Moment</label>
+                  <div class="wc-input-val"><span class="wc-num" data-target="185">0</span> kN·m</div>
+                </div>
+                <div class="wc-btn-calc">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                  Calculate
+                </div>
+              </div>
+
+              <!-- Results Panel -->
+              <div class="wc-panel wc-results">
+                <div class="wc-panel-header">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                  Design Results
+                </div>
+
+                <!-- Beam Cross Section SVG -->
+                <div class="wc-beam-diagram">
+                  <svg viewBox="0 0 200 160" class="beam-cross-section">
+                    <!-- Beam outline -->
+                    <rect x="40" y="10" width="120" height="140" fill="none" stroke="#cbd5e1" stroke-width="1.5" rx="2"/>
+                    <!-- Concrete fill -->
+                    <rect x="41" y="11" width="118" height="138" fill="#f0f9ff" rx="1"/>
+                    <!-- Dimension lines -->
+                    <line x1="40" y1="155" x2="160" y2="155" stroke="#94a3b8" stroke-width="0.8" stroke-dasharray="3,2"/>
+                    <text x="100" y="160" text-anchor="middle" fill="#64748b" font-size="7" font-family="Inter">b = 300 mm</text>
+                    <line x1="170" y1="10" x2="170" y2="150" stroke="#94a3b8" stroke-width="0.8" stroke-dasharray="3,2"/>
+                    <text x="180" y="85" text-anchor="middle" fill="#64748b" font-size="7" font-family="Inter" transform="rotate(90, 180, 85)">D = 550 mm</text>
+                    <!-- Rebars -->
+                    <circle cx="62" cy="130" r="5" fill="#3b82f6" class="rebar-dot rebar-1"/>
+                    <circle cx="85" cy="130" r="5" fill="#3b82f6" class="rebar-dot rebar-2"/>
+                    <circle cx="115" cy="130" r="5" fill="#3b82f6" class="rebar-dot rebar-3"/>
+                    <circle cx="138" cy="130" r="5" fill="#3b82f6" class="rebar-dot rebar-4"/>
+                    <!-- Rebar label -->
+                    <text x="100" y="145" text-anchor="middle" fill="#2563eb" font-size="6.5" font-weight="600" font-family="Inter">4 × 20mm ø (Fe500)</text>
+                    <!-- Neutral axis -->
+                    <line x1="45" y1="62" x2="155" y2="62" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3" class="neutral-axis"/>
+                    <text x="54" y="58" fill="#d97706" font-size="6" font-family="Inter" font-weight="500">N.A.</text>
+                    <!-- Clear cover notation -->
+                    <line x1="55" y1="135" x2="55" y2="150" stroke="#94a3b8" stroke-width="0.5"/>
+                    <text x="55" y="155" text-anchor="middle" fill="#94a3b8" font-size="5" font-family="Inter">25 clr</text>
+                  </svg>
+                </div>
+
+                <!-- Result Values -->
+                <div class="wc-result-grid">
+                  <div class="wc-result-item safe">
+                    <div class="wc-result-label">Status</div>
+                    <div class="wc-result-value wc-safe">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+                      SAFE
+                    </div>
+                  </div>
+                  <div class="wc-result-item">
+                    <div class="wc-result-label">Ast Required</div>
+                    <div class="wc-result-value"><span class="wc-num" data-target="942">0</span> mm²</div>
+                  </div>
+                  <div class="wc-result-item">
+                    <div class="wc-result-label">Ast Provided</div>
+                    <div class="wc-result-value"><span class="wc-num" data-target="1257">0</span> mm²</div>
+                  </div>
+                  <div class="wc-result-item">
+                    <div class="wc-result-label">Mu Capacity</div>
+                    <div class="wc-result-value"><span class="wc-num" data-target="228">0</span> kN·m</div>
+                  </div>
+                </div>
+
+                <!-- IS Code Reference -->
+                <div class="wc-code-ref">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                  IS 456 : 2000 — Cl. 38.1, Annex G-1.1
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -168,6 +316,55 @@
     <p>Jump right into the Workspace. No installation, zero setup, fully client-side calculations.</p>
     <a href="workspace.html" class="btn-cta">Go to Workspace</a>
   </section>
+
+  <!-- Hero Animation Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const nums = document.querySelectorAll('.wc-num');
+      let animated = false;
+      
+      function animateNumbers() {
+        if (animated) return;
+        animated = true;
+        
+        nums.forEach((el, i) => {
+          const target = parseInt(el.dataset.target);
+          const duration = 1800;
+          const delay = 400 + i * 120;
+          
+          setTimeout(() => {
+            const start = performance.now();
+            function tick(now) {
+              const elapsed = now - start;
+              const progress = Math.min(elapsed / duration, 1);
+              // Ease out cubic
+              const eased = 1 - Math.pow(1 - progress, 3);
+              el.textContent = Math.round(target * eased);
+              if (progress < 1) requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+          }, delay);
+        });
+      }
+
+      // Use IntersectionObserver to trigger when graphic is visible
+      const graphic = document.querySelector('.hero-graphic');
+      if (graphic) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateNumbers();
+              observer.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        observer.observe(graphic);
+      }
+
+      // Fallback: animate after 1s if observer doesn't fire
+      setTimeout(animateNumbers, 1500);
+    });
+  </script>
 
 </body>
 
