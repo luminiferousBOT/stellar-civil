@@ -64,7 +64,26 @@
       </a>
       <a href="workspace.html" class="btn-download-version">Go to Workspace</a>
     </div>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-hamburger" id="landing-hamburger" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
   </nav>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/#features">Features</a>
+    <a href="/#showcase">Showcase</a>
+    <a href="/about.html">About</a>
+    <a href="https://www.linkedin.com/in/devashish-kaushik-31a862271/" target="_blank" rel="noopener">Contact</a>
+    <a href="workspace.html" class="mobile-menu-cta">Go to Workspace</a>
+  </div>
 
   <main class="about-page">
     <div class="container">
@@ -339,6 +358,25 @@
       </div>
     </footer>
   </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('landing-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+          mobileMenu.classList.toggle('open');
+          hamburger.classList.toggle('open');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+          });
+        });
+      }
+    });
+  </script>
 
 </body>
 
