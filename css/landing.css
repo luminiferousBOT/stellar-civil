@@ -189,6 +189,13 @@ body.landing {
   margin: 0 0 1.5rem 0;
 }
 
+.text-gradient {
+  background: linear-gradient(to right, #475569, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .hero-desc {
   font-size: 1.125rem;
   color: #475569;
