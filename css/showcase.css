@@ -68,35 +68,18 @@
   border-bottom: 1px solid #f1f5f9;
   position: relative;
   overflow: hidden;
-  padding: 20px;
 }
 
-/* Gradient backgrounds for specific cards */
-.showcase-bg-1 { background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%); }
-.showcase-bg-2 { background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); }
-.showcase-bg-3 { background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); }
-.showcase-bg-4 { background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%); }
-
-.showcase-image svg {
-  width: 120px;
-  height: 120px;
-  color: #64748b;
-  opacity: 0.7;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
-  filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+.showcase-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.showcase-card:hover .showcase-image svg {
-  transform: scale(1.15) translateY(-5px);
-  opacity: 1;
-  color: #3b82f6; /* Will be overridden if SVG has native colors or gradients, assuming stroke="currentColor" sometimes */
+.showcase-card:hover .showcase-img {
+  transform: scale(1.05);
 }
-
-/* Specific hover colors for SVG */
-.showcase-card:nth-child(1):hover .showcase-image svg { color: #3b82f6; }
-.showcase-card:nth-child(2):hover .showcase-image svg { color: #10b981; }
-.showcase-card:nth-child(3):hover .showcase-image svg { color: #8b5cf6; }
-.showcase-card:nth-child(4):hover .showcase-image svg { color: #f59e0b; }
 
 
 .showcase-content {
