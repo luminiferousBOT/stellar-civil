@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Showcase — Stellar Civil Built Projects</title>
+  <meta name="description"
+    content="Discover structural engineering projects and use cases built and verified using the Stellar Civil open-source workspace.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/variables.css" />
+  <link rel="stylesheet" href="/css/landing.css" />
+  <link rel="stylesheet" href="/css/showcase.css" />
+</head>
+
+<body class="landing">
+
+  <!-- Sticky Navbar -->
+  <nav class="landing-nav">
+    <a href="/" class="brand">
+      <div class="brand-logo">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="url(#logoGradientIndex)" stroke-width="2.5"
+          stroke-linecap="round" stroke-linejoin="round">
+          <defs>
+            <linearGradient id="logoGradientIndex" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#2563eb" />
+              <stop offset="100%" stop-color="#3b82f6" />
+            </linearGradient>
+          </defs>
+          <path
+            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+          </path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+          <circle cx="12" cy="12" r="1.5" fill="#3b82f6" stroke="none" />
+        </svg>
+      </div>
+      <span class="brand-name">Stellar Civil</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="/">Home</a>
+      <a href="/#features">Features</a>
+      <a href="showcase.html" style="color: var(--text-primary); font-weight: 700;">Showcase</a>
+      <a href="about.html">About</a>
+      <a href="https://www.linkedin.com/in/devashish-kaushik-31a862271/" target="_blank" rel="noopener">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://github.com/luminiferousBOT/stellar-civil" target="_blank" rel="noopener" class="social-btn"
+        style="margin-right: 1rem;">
+        <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+          stroke-linejoin="round" width="20" height="20">
+          <path
+            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+          </path>
+        </svg>
+      </a>
+      <a href="workspace.html" class="btn-workspace">Go to Workspace</a>
+    </div>
+
+    <!-- Mobile hamburger -->
+    <button class="nav-hamburger" id="landing-hamburger" aria-label="Toggle menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu Drawer -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/">Home</a>
+    <a href="/#features">Features</a>
+    <a href="showcase.html">Showcase</a>
+    <a href="about.html">About</a>
+    <a href="https://www.linkedin.com/in/devashish-kaushik-31a862271/" target="_blank" rel="noopener">Contact</a>
+    <a href="workspace.html" class="mobile-menu-cta">Go to Workspace</a>
+  </div>
+
+  <main class="showcase-page">
+    <header class="showcase-hero">
+      <h1>Built with <span class="text-gradient">Stellar Civil.</span></h1>
+      <p>Explore real-world use cases, structural components, and engineering workflows that our glass-box platform simplifies and verifies.</p>
+    </header>
+
+    <div class="showcase-container">
+      <div class="showcase-grid">
+
+        <!-- Card 1 -->
+        <div class="showcase-card">
+          <div class="showcase-image showcase-bg-1">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Outline of High Rise building -->
+              <rect x="6" y="2" width="12" height="20" rx="1"></rect>
+              <line x1="6" y1="6" x2="18" y2="6"></line>
+              <line x1="6" y1="10" x2="18" y2="10"></line>
+              <line x1="6" y1="14" x2="18" y2="14"></line>
+              <line x1="6" y1="18" x2="18" y2="18"></line>
+              <line x1="10" y1="2" x2="10" y2="22"></line>
+              <line x1="14" y1="2" x2="14" y2="22"></line>
+            </svg>
+          </div>
+          <div class="showcase-content">
+            <span class="showcase-tag tag-rcc">RCC Structure</span>
+            <h3 class="showcase-title">High-Rise Commercial Floor Framing</h3>
+            <p class="showcase-desc">Design of continuous singly and doubly reinforced beams linked with robust column framing verification for multi-story office buildings.</p>
+            <div class="showcase-footer">
+              <span class="tool-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/></svg>
+                Beam Calculator
+              </span>
+              <span class="tool-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/></svg>
+                Column Design
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="showcase-card">
+          <div class="showcase-image showcase-bg-2">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Isometric/Steel Factory look -->
+              <path d="M2 20h20M4 20V8l8-4 8 4v12"></path>
+              <line x1="12" y1="4" x2="12" y2="20"></line>
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="4" y1="8" x2="12" y2="12"></line>
+              <line x1="20" y1="8" x2="12" y2="12"></line>
+              <line x1="4" y1="16" x2="12" y2="20"></line>
+              <line x1="20" y1="16" x2="12" y2="20"></line>
+            </svg>
+          </div>
+          <div class="showcase-content">
+            <span class="showcase-tag tag-steel">Steel Design</span>
+            <h3 class="showcase-title">Industrial Warehouse Truss & Portal</h3>
+            <p class="showcase-desc">Complete end-to-end design and capacity verification of steel sections and bolted connections following IS 800 specifications.</p>
+            <div class="showcase-footer">
+              <span class="tool-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6h20M2 18h20M6 6v12M18 6v12"/></svg>
+                Steel Beam
+              </span>
+              <span class="tool-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg>
+                Bolt Design
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="showcase-card">
+          <div class="showcase-image showcase-bg-3">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Bridge / Infrastructure look -->
+              <path d="M2 12h20M4 12v8M20 12v8M8 12C8 6 16 6 16 12"></path>
+              <line x1="8" y1="12" x2="8" y2="16"></line>
+              <line x1="16" y1="12" x2="16" y2="16"></line>
+              <line x1="12" y1="7" x2="12" y2="12"></line>
+              <path d="M4 16h16M2 20h20"></path>
+            </svg>
+          </div>
+          <div class="showcase-content">
+            <span class="showcase-tag tag-infra">Infrastructure</span>
+            <h3 class="showcase-title">Highway Flyover Substructures</h3>
+            <p class="showcase-desc">Ensuring the structural integrity of bridge piers and massive isolated footings carrying heavy axle loads (IRC and IS codes integration).</p>
+            <div class="showcase-footer">
+              <span class="tool-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 21V8l9-6 9 6v13"/></svg>
+                Footing Calculator
+              </span>
+              <span class="tool-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/></svg>
+                Pier/Column
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="showcase-card">
+          <div class="showcase-image showcase-bg-4">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <!-- Residential / Complex -->
+              <path d="M3 21h18M5 21V5l7-3 7 3v16"></path>
+              <rect x="9" y="11" width="6" height="10"></rect>
+              <rect x="7" y="7" width="2" height="2"></rect>
+              <rect x="11" y="7" width="2" height="2"></rect>
+              <rect x="15" y="7" width="2" height="2"></rect>
+            </svg>
+          </div>
+          <div class="showcase-content">
+            <span class="showcase-tag tag-mixed">Mixed-Use</span>
+            <h3 class="showcase-title">Residential Flat Slab Configuration</h3>
+            <p class="showcase-desc">Optimization of slab thickness and reinforcement schedules for modern residential and mixed-use complexes.</p>
+            <div class="showcase-footer">
+              <span class="tool-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                Two-Way Slab
+              </span>
+              <span class="tool-badge">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="21" x2="20" y2="21"/><line x1="4" y1="17" x2="20" y2="17"/><path d="M6 17v-4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4"/></svg>
+                Quantity Estimation
+              </span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="showcase-cta">
+        <h2>Ready to verify your own designs?</h2>
+        <p>Adopt the glass-box alternative to structural calculation tools. Free, open-source, and strictly aligned with IS standards.</p>
+        <a href="workspace.html" class="btn-cta-showcase">Enter the Workspace</a>
+      </div>
+    </div>
+
+    <!-- Exact Footer Match to about.html -->
+    <footer class="about-footer">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 4rem 2rem 2rem; border-top: 1px solid #e2e8f0;">
+        <div class="footer-top" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; margin-bottom: 3rem;">
+          <div class="footer-brand-side" style="max-width: 300px;">
+            <a href="/" class="footer-logo" style="display:flex; align-items:center; gap:0.5rem; text-decoration:none; color:#020617; font-weight:800; font-size:1.125rem; margin-bottom:1rem;">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="url(#logoGradientFooter)"
+                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                  <linearGradient id="logoGradientFooter" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2563eb" />
+                    <stop offset="100%" stop-color="#3b82f6" />
+                  </linearGradient>
+                </defs>
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+                </path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                <circle cx="12" cy="12" r="1.5" fill="#3b82f6" stroke="none" />
+              </svg>
+              <span>Stellar Civil</span>
+            </a>
+            <p class="footer-tagline" style="color:#64748b; font-size:0.9375rem; line-height:1.6; margin:0;">An open-source project providing a fully transparent workspace to model, verify,
+              and document structural RCC and Steel elements instantly.</p>
+          </div>
+
+          <div class="footer-nav" style="display: flex; gap: 4rem;">
+            <div class="footer-col" style="display: flex; flex-direction: column;">
+              <h4 style="font-weight: 700; color: #020617; margin-bottom: 1rem; font-size: 1rem;">Quick Links</h4>
+              <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.5rem;">
+                <li><a href="/#features" style="color:#475569; text-decoration:none; font-size:0.9375rem; transition:color 0.2s;">Features</a></li>
+                <li><a href="showcase.html" style="color:#475569; text-decoration:none; font-size:0.9375rem; transition:color 0.2s;">Showcase</a></li>
+                <li><a href="/about.html" style="color:#475569; text-decoration:none; font-size:0.9375rem; transition:color 0.2s;">About</a></li>
+              </ul>
+            </div>
+            <div class="footer-col" style="display: flex; flex-direction: column;">
+              <h4 style="font-weight: 700; color: #020617; margin-bottom: 1rem; font-size: 1rem;">Connect</h4>
+              <div class="social-grid" style="display: flex; gap: 1rem;">
+                <a href="https://github.com/luminiferousBOT/stellar-civil" class="social-btn" target="_blank" rel="noopener" style="color:#64748b; transition:color 0.2s;">
+                  <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                    stroke-linejoin="round" width="20" height="20">
+                    <path
+                      d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                    </path>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/devashish-kaushik-31a862271/" class="social-btn" target="_blank" rel="noopener" style="color:#64748b; transition:color 0.2s;">
+                  <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                    stroke-linejoin="round" width="20" height="20">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 2rem; border-top: 1px solid #f1f5f9; text-align: center;">
+          <p class="copyright" style="color:#94a3b8; font-size:0.875rem; margin:0;">© 2026 Stellar Civil. Created by Devashish Kaushik.</p>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Mobile menu toggle
+      const hamburger = document.getElementById('landing-hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+          mobileMenu.classList.toggle('open');
+          hamburger.classList.toggle('open');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            hamburger.classList.remove('open');
+          });
+        });
+      }
+    });
+
+    // Hover effect styles dynamically for the footer nav links
+    document.querySelectorAll('.footer-col a').forEach(a => {
+        a.addEventListener('mouseenter', e => e.target.style.color = '#0f172a');
+        a.addEventListener('mouseleave', e => e.target.style.color = '#475569');
+    });
+    document.querySelectorAll('.social-btn').forEach(btn => {
+        btn.addEventListener('mouseenter', e => e.currentTarget.style.color = '#0f172a');
+        btn.addEventListener('mouseleave', e => e.currentTarget.style.color = '#64748b');
+    });
+  </script>
+
+</body>
+
+</html>
