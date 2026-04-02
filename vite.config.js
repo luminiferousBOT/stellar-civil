@@ -11,6 +11,7 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         about: resolve(__dirname, 'about.html'),
         workspace: resolve(__dirname, 'workspace.html'),
+        showcase: resolve(__dirname, 'showcase.html'),
       },
     },
   },
