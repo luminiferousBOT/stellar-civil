@@ -3,6 +3,7 @@
   "framework": "vite",
   "rewrites": [
     { "source": "/about", "destination": "/about.html" },
-    { "source": "/workspace", "destination": "/workspace.html" }
+    { "source": "/workspace", "destination": "/workspace.html" },
+    { "source": "/showcase", "destination": "/showcase.html" }
   ]
 }
