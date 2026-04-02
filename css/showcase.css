@@ -199,7 +199,6 @@
 
 .btn-cta-showcase:hover {
   background: #f1f5f9;
-  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
