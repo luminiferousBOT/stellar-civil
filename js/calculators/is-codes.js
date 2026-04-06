@@ -115,7 +115,7 @@ export function initIsCodes(container) {
     
     // Enhanced boundary card
     cardsHtml += `
-      <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; height: 100%; border: 1px solid var(--border-color); border-top: 4px solid var(--primary-color);">
+      <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; height: 100%; border: 1px solid var(--border-color); border-top: 4px solid var(--color-accent);">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem;">
           <div>
             <h3 style="margin: 0; color: var(--text-color); font-size: 1.25rem;">${c.code}</h3>
