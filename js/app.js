@@ -330,7 +330,23 @@ function renderWelcomePage(container) {
   container.innerHTML = `
     <div class="main-content__inner">
       <div class="welcome-page">
-        <div class="welcome-page__icon">${ICONS.building}</div>
+        <div class="welcome-page__icon">
+          <svg viewBox="0 0 24 24" width="80" height="80" fill="none" stroke="url(#logoGradientWelcome)" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <defs>
+              <linearGradient id="logoGradientWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#2563eb" />
+                <stop offset="100%" stop-color="#3b82f6" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+            </path>
+            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            <circle cx="12" cy="12" r="1.5" fill="#3b82f6" stroke="none" />
+          </svg>
+        </div>
         <h1>Welcome to Stellar Civil</h1>
         <p>IS Code Design Calculators for Structural Engineers. Select a calculator from the sidebar to get started.</p>
 
