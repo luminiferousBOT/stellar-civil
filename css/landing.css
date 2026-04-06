@@ -196,7 +196,7 @@ body.landing {
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #0f172a 0%, #475569 120%);
+  background: linear-gradient(to right, #020617 0%, #e2e8f0 110%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
